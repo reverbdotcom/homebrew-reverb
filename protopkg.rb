@@ -1,10 +1,10 @@
 class Protopkg < Formula
-  @version = "v0.0.1"
+  @version = File.read(File.expand_path("../PROTOPKG-VERSION", __FILE__)).chomp
 
   desc "A protocol buffer package manager"
   homepage "https://github.com/ebenoist/protopkg"
   url "https://github.com/ebenoist/protopkg/releases/download/#{@version}/binaries.tar.gz"
-  sha256 "50b359619630bfbe1aca18e042cfe0db4af483fe96c029982925b8ea574d13d5"
+  sha256 File.read(File.expand_path("../PROTOPKG-SHA", __FILE__)).chomp
   version @version
 
   def install
