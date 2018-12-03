@@ -3,7 +3,7 @@ class Protopkg < Formula
 
   desc "A protocol buffer package manager"
   homepage "https://github.com/ebenoist/protopkg"
-  url "https://github.com/ebenoist/protopkg/releases/download/#{@version}/binaries.tar.gz"
+  url "https://github.com/reverbdotcom/protopkg/releases/download/#{@version}/binaries.tar.gz"
   sha256 File.read(File.expand_path("../PROTOPKG_SHA", __FILE__)).chomp
   version @version
 
