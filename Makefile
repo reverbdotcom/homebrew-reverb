@@ -11,7 +11,7 @@ ifdef DRYRUN
 else
 	@git add .
 	@git commit -m "Bumping to $(VERSION)"
-	@git push origin head
+	@git push origin HEAD
 endif
 
 protopkg-release: check-version protopkg-sha protopkg-version check-version commit
