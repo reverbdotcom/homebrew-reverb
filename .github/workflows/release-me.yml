@@ -1,0 +1,33 @@
+name: Release me
+
+
+run-name: "${{ inputs.formula }} | ${{ inputs.version }}"
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+      formula:
+        required: true
+        type: string
+        description: |
+          The formula to release. Must be one of the following:
+          - `sbx`
+          - `rv`
+          - `protopkg`
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Release
+        env:
+          VERSION: ${{ inputs.version }}
+          FORMULA: ${{ inputs.formula }}
+        run: |
+          echo "Releasing $FORMULA version $VERSION"
+          make $FORMULA-release
+
