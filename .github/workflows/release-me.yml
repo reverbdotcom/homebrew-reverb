@@ -4,7 +4,7 @@ name: Release me
 run-name: "${{ inputs.formula }} | ${{ inputs.version }}"
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       version:
         required: true
@@ -22,15 +22,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/create-github-app-token@v1.7.0
-        id: generate-token
-        with:
-          app-id: ${{ secrets.CONDUCTOR_APP_ID }}
-          private-key: ${{ secrets.CONDUCTOR_PRIVATE_KEY }}
-          repositories: homebrew-reverb
       - uses: actions/checkout@v4
         with:
-          token: ${{ steps.generate-token.outputs.token }}
           repository: reverbdotcom/homebrew-reverb
       - name: Release
         env:
