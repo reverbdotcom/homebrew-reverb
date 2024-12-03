@@ -29,11 +29,3 @@ rv-sha:
 
 rv-version:
 	@echo $(VERSION) > RV_VERSION
-
-sbx-sha:
-	@curl -sL https://github.com/reverbdotcom/sbx/releases/download/$(VERSION)/sbx-darwin-arm64.tar.gz | shasum -a 256 | awk '{ print $$1 }' > SBX_SHA
-
-sbx-version:
-	@echo $(VERSION) > SBX_VERSION
-
-
