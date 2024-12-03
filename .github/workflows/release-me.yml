@@ -23,6 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        repo: reverbdotcom/homebrew-tap
       - name: Release
         env:
           VERSION: ${{ inputs.version }}
