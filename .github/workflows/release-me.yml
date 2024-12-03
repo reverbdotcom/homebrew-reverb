@@ -23,7 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        repo: reverbdotcom/homebrew-reverb
+        with:
+          repository: reverbdotcom/homebrew-reverb
       - name: Release
         env:
           VERSION: ${{ inputs.version }}
